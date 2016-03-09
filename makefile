@@ -9,14 +9,12 @@ ODIR=obj
 SRCDIR=src
 #DEPS = controlleraccess.h peersignalsender.h tincanconnectionmanager.h tincan_utils.h tincanxmppsocket.h wqueue.h xmppnetwork.h
 _OBJ = controlleraccess.o tincan.o tincanconnectionmanager.o tincan_utils.o tincanxmppsocket.o xmppnetwork.o
-
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: $(SRCDIR)/%.cc
+	if [ ! -d obj ]; then  mkdir obj; fi
 	$(CC) -c -o $@ $< $(CFLAGS)
 $(TARGET): $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LDIR) $(LIBS)
 clean:
-	rm -f $(TARGET) $(ODIR)/*.o *~
-	
-
+	rm -rf $(TARGET) $(ODIR) *~
