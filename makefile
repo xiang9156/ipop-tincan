@@ -3,7 +3,7 @@ CC = g++
 #clang++-3.5 
 CFLAGS = -std=c++11 -Wall -fno-rtti -I./include/tap -I./include -D LINUX -D WEBRTC_POSIX
 LDIR = -L./lib
-LIBS = -lipoptap -lrtc_p2p -lrtc_base -ljsoncpp -lrtc_base_approved -lrtc_xmpp -lrtc_xmllite -lpthread -lfield_trial_default -lexpat -lboringssl 
+LIBS = -lipoptap -lrtc_p2p -lrtc_base -ljsoncpp -lrtc_base_approved -lrtc_xmpp -lrtc_xmllite -lpthread -lfield_trial_default -lexpat -lboringssl -lrt 
 #-lboringssl_asm
 ODIR=obj
 #SRCDIR=src
