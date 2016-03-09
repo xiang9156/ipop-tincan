@@ -5,14 +5,14 @@ CFLAGS = -std=c++11 -Wall -fno-rtti -I./include/tap -I./include -D LINUX -D WEBR
 LDIR = -L./lib
 LIBS = -lipoptap -lrtc_p2p -lrtc_base -ljsoncpp -lrtc_base_approved -lrtc_xmpp -lrtc_xmllite -lpthread -lfield_trial_default -lexpat -lboringssl -lrt 
 #-lboringssl_asm
-ODIR=obj
-#SRCDIR=src
-DEPS = controlleraccess.h peersignalsender.h tincanconnectionmanager.h tincan_utils.h tincanxmppsocket.h wqueue.h xmppnetwork.h
 
+ODIR=obj
+SRCDIR=src
+#DEPS = controlleraccess.h peersignalsender.h tincanconnectionmanager.h tincan_utils.h tincanxmppsocket.h wqueue.h xmppnetwork.h
 _OBJ = controlleraccess.o tincan.o tincanconnectionmanager.o tincan_utils.o tincanxmppsocket.o xmppnetwork.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-$(ODIR)/%.o: %.cc $(DEPS)
+$(ODIR)/%.o: $(SRCDIR)/%.cc
 	$(CC) -c -o $@ $< $(CFLAGS)
 $(TARGET): $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LDIR) $(LIBS)
