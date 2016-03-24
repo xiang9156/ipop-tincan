@@ -387,15 +387,15 @@ void TinCanConnectionManager::SetupTransport(PeerState* peer_state) {
   if (peer_state->uid.compare(tincan_id_) > 0) {
     conn_role_local = cricket::CONNECTIONROLE_ACTIVE;
   }
-  peer_state->local_description.reset(new cricket::TransportDescription(
-      std::vector<std::string>(), kIceUfrag,
-      kIcePwd, cricket::ICEMODE_FULL, conn_role_local,
-      local_fingerprint_.get(), peer_state->candidates));
+//  peer_state->local_description.reset(new cricket::TransportDescription(
+//      std::vector<std::string>(), kIceUfrag,
+//      kIcePwd, cricket::ICEMODE_FULL, conn_role_local,
+//      local_fingerprint_.get(), peer_state->candidates));
   //remove cricket::NS_JINGLE_ICE_UDP
-  peer_state->remote_description.reset(new cricket::TransportDescription(
-      std::vector<std::string>(), kIceUfrag,
-      kIcePwd, cricket::ICEMODE_FULL, cricket::CONNECTIONROLE_NONE,
-      peer_state->remote_fingerprint.get(), peer_state->candidates));
+//  peer_state->remote_description.reset(new cricket::TransportDescription(
+//      std::vector<std::string>(), kIceUfrag,
+//      kIcePwd, cricket::ICEMODE_FULL, cricket::CONNECTIONROLE_NONE,
+//     peer_state->remote_fingerprint.get(), peer_state->candidates));
   //remove cricket::NS_JINGLE_ICE_UDP
   if (peer_state->uid.compare(tincan_id_) < 0) {
     peer_state->transport->SetIceRole(cricket::ICEROLE_CONTROLLING);
