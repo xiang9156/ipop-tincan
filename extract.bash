@@ -9,4 +9,4 @@ ar -t ./out/Release/obj/webrtc/base/librtc_base_approved.a | xargs ar -rcs lib/l
 ar -t ./out/Release/obj/webrtc/p2p/librtc_p2p.a | xargs ar -rcs lib/librtc_p2p.a
 ar -t ./out/Release/obj/webrtc/libjingle/xmllite/librtc_xmllite.a | xargs ar -rcs lib/librtc_xmllite.a
 ar -t ./out/Release/obj/webrtc/libjingle/xmpp/librtc_xmpp.a | xargs ar -rcs lib/librtc_xmpp.a
-#ar -t ./out/Release/obj/chromium/src/third_party/boringssl/libboringssl_asm.a | xargs ar -rcs lib/libboringssl_asm.a
+ar -t ./out/Release/obj/chromium/src/third_party/boringssl/libboringssl_asm.a | xargs ar -rcs lib/libboringssl_asm.a
