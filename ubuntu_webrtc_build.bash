@@ -23,7 +23,7 @@ fi
 # Download source code of WebRTC
 gclient sync
 
-# Extract include files to dir /include
+# Extract header files to dir /include
 mkdir include
 mkdir include/json
 mkdir include/webrtc
